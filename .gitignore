@@ -1,0 +1,13 @@
+static/admin/
+__pycache__/
+.cache/
+.pytest_cache/
+htmlcov/
+dist/
+build/
+*.egg-info/
+.idea/
+*.pyc
+.coverage
+*.swp
+*~

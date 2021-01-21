@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lms/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'lms/css/base_page.css' %}">
+    {% block style_page %}{% endblock %}
+    <title>lms{% block title %}{% endblock %}</title>
+</head>
+<body class="w-75 mx-auto my-5">
+<header>
+    <h1 class="my-4">
+        <a class="nav-link active text-dark" href="{% url 'lms:index' %}">
+            سامانه آموزش دانش گستر
+        </a>
+    </h1>
+    <nav class="nav">
+        <a class="btn btn-outline-primary mx-1" href="{% url 'lms:register' %}">ثبت نام</a>
+        <a class="btn btn-outline-primary mx-1" href="{% url 'lms:studentes' %}">دانشجویان</a>
+        <a class="btn btn-outline-primary mx-1" href="{% url 'lms:courses' %}">درس ها</a>
+        <a class="btn btn-outline-primary mx-1" href="{% url 'lms:student_cours_graid' %}">ثبت نمره</a>
+        <a class="btn btn-outline-primary mx-1" href="{% url 'lms:new_student_cours_graid' %}">ثبت نمره جدید</a>
+        <a class="btn btn-outline-primary mx-1" href="{% url 'lms:graids' %}">نمرات</a>
+    </nav>
+</header>
+<hr/>
+<main>
+    <div class="mx-auto my-5">
+        {% block main %}
+        <h1 class="text-center">درخت تو گر بار دانش بگیرد</h1>
+        <h1 class="text-center">به زیر آوری چرخ نیلوفری را</h1>
+        {% endblock %}
+    </div>
+</main>
+<footer class="footer">
+    <hr/>
+    <div class="container">
+        <h5>
+            &#169;
+            کلیه حقوق این سایت متعلق به موسسه دانش گستر است.
+        </h5>
+    </div>
+</footer>
+</body>
+</html>

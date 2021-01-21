@@ -1,0 +1,34 @@
+{% extends "lms/base_page.html" %}
+
+{% block title %} - نمرات {% endblock %}
+
+{% block main %}
+<table class="w-50 mx-auto table table-striped table-bordered text-center">
+    <thead class="table-dark">
+    <tr>
+        <th> نام درس</th>
+        <th>دانشجو</th>
+        <th>نمره</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for key, value in graids.items %}
+    {% for x in value %}
+        <tr>
+            {% if forloop.first %}
+            <td rowspan="{{ value|length }}"> {{ key }} </td>
+            {% endif %}
+            {% if x.1 < 10 %}
+            <td class="text-danger"> {{ x.0 }} </td>
+            <td class="text-danger"> {{ x.1 }} </td>
+            {% else %}
+            <td> {{ x.0 }} </td>
+            <td> {{ x.1 }} </td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+

@@ -1,0 +1,12 @@
+{% extends "lms/base_page.html" %}
+
+{% block title %} - اطلاعات فردی {% endblock %}
+
+{% block main %}
+
+<div>
+    <p class="text-center">نام و نام خانوادگی: {{ student }} </p>
+    <p class="text-center">شماره دانشجویی: {{ student.student_id }} </p>
+</div>
+
+{% endblock %}

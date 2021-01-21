@@ -1,0 +1,28 @@
+{% extends "lms/base_page.html" %}
+
+{% block title %} - دانشجویان{% endblock %}
+
+{% block main %}
+<table class="w-50 mx-auto table table-striped table-bordered text-center">
+    <thead class="table-dark">
+    <tr>
+        <th> نام و نام خانوادگی</th>
+        <th> شماره دانشجویی</th>
+        <th> ویرایش اطلاعات</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for student in student_list %}
+    <tr>
+        <td> <a class="text-success" href="{% url 'lms:detail' student.id %}"> {{ student }} </a> </td>
+        {% if student.student_id %}
+        <td> {{ student.student_id }}</td>
+        {% else %}
+        <td> - </td>
+        {% endif %}
+        <td> <a class="text-success" href="{% url 'lms:edit_student_detail' student.id %}"> ویرایش اطلاعات </a> </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

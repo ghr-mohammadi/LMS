@@ -1,0 +1,22 @@
+{% extends "lms/base_page.html" %}
+
+{% block title %} - درس ها{% endblock %}
+
+{% block main %}
+<table class="w-50 mx-auto table table-striped table-bordered text-center">
+    <thead class="table-dark">
+    <tr>
+        <th> نام درس</th>
+        <th> تعداد دانشجویان</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for x in course_list %}
+    <tr>
+        <td> {{ x.0 }} </td>
+        <td> {{ x.1 }} </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
